@@ -25,8 +25,9 @@ def create_app(test_config=None):
         return 'Server is up!'
 
     # apply the blueprints to the app
-    from marionette import interior_sign
+    from marionette import gps, interior_sign
 
+    app.register_blueprint(gps.bp)
     app.register_blueprint(interior_sign.bp)
 
     return app
